@@ -168,12 +168,12 @@ TmEcode PcapDirectoryDone(PcapFileDirectoryVars *ptv)
 
 TmEcode PcapDetermineDirectoryOrFile(char *filename, DIR **directory)
 {
-    DIR *temp_dir = NULL;
-    TmEcode return_code = TM_ECODE_FAILED;
+    //DIR *temp_dir = NULL;
+    TmEcode return_code = TM_ECODE_OK;
 
-    temp_dir = opendir(filename);
+    //temp_dir = opendir(filename);
 
-    if (temp_dir == NULL) {//if null, our filename may just be a normal file
+    /*if (temp_dir == NULL) {//if null, our filename may just be a normal file
         switch (errno) {
             case EACCES:
                 SCLogError(SC_ERR_FOPEN, "%s: Permission denied", filename);
@@ -220,7 +220,7 @@ TmEcode PcapDetermineDirectoryOrFile(char *filename, DIR **directory)
         //no error, filename references a directory
         *directory = temp_dir;
         return_code = TM_ECODE_OK;
-    }
+    }*/
 
     return return_code;
 }
